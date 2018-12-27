@@ -1,0 +1,49 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="cat_prod.ProductListOfCat" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Title">
+		<content>
+		<Label text="Select Category"
+		class="sapUiSmallMarginTop sapUiSmallMarginBegin
+		sapUiLargeMarginEnd
+		"
+		/>
+			<Select items="{/Categories}" 
+			id="idCatSelect"
+			change="onCategoryChange">
+			   <items>
+			      <core:Item text="{CategoryName}" key="{CategoryID}"/>
+			   </items>
+			</Select>
+			<Table items="{/Products}" visible="true"
+	           id="idTable"
+	           >
+	          <columns>
+	              <Column>
+	                 <header>
+	                    <Text text="Product ID"/>
+	                 </header>
+	              </Column>
+	              <Column>
+	                 <header>
+	                    <Text text="Product Name"/>
+	                 </header>
+	              </Column>
+	              <Column>
+	                 <header>
+	                    <Text text="Category ID"/>
+	                 </header>
+	              </Column>
+	          </columns>
+	          <items>
+	             <ColumnListItem>
+	                  <cells>
+	                       <Text text="{ProductID}"/>
+	                       <Text text="{ProductName}"/>
+	                       <Text text="{CategoryID}"/>
+	                  </cells>
+	             </ColumnListItem>
+	          </items>
+	       </Table>
+		</content>
+	</Page>
+</core:View>
